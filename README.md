@@ -1,34 +1,41 @@
-# gmail-nodemailer-test
+# Gmail-nodemailer-test
 This project demonstrates how to send automated emails using Node.js + Nodemailer + Gmail SMTP. It uses an App Password (instead of normal login) for secure and reliable email delivery without needing Gmail API setup.
 
-**Today I explored how to send emails through automation using Node.js, Gmail SMTP & Nodemailer!**
+## What I Explored
+
+**Today I explored how to send emails through automation using Node.js, Gmail SMTP & Nodemailer!**  
 As part of a self-learning experiment, I created a script that:
-1. Logs into my Gmail account using an App Password
-2. Sends an email to myself
-3. Verifies the email content
-4. Uses Nodemailer with Gmail’s SMTP server
+
+- Logs into my Gmail account using an App Password
+- Sends an email to myself
+- Verifies the email delivery and content
+- Uses Nodemailer with Gmail’s SMTP server
+
+---
+
+## Tech Used
+- [Node.js](https://nodejs.org/)
+- [Nodemailer](https://nodemailer.com/about/)
+- Gmail SMTP
+- Gmail App Passwords (with 2-Step Verification enabled)
 
 
-**Tech Used:**
-1. Node.js
-2. Nodemailer
-3. Gmail SMTP
-4. App Passwords (with 2FA enabled)
+## Key Takeaways:
+- SMTP (Simple Mail Transfer Protocol) is a powerful way to send emails programmatically.
+- Gmail requires App Passwords if you're using third-party tools like Nodemailer.
+- This approach is helpful for sending automated reports, test results, or alerts during automation.
 
+## Steps I Followed:
 
-**Key Takeaways:**
-SMTP (Simple Mail Transfer Protocol) is a powerful way to send emails programmatically.
-Gmail requires App Passwords if you're using third-party tools like Nodemailer.
-This approach is helpful for sending automated reports, test results, or alerts during automation.
+### 1. Install Nodemailer
+     npm install nodemailer 
+     
+### 2. Enable 2-Step Verification in Gmail
+     Go to: (https://myaccount.google.com/apppasswords)
+     Select "Mail" and "Windows Computer" (or any device), and generate your App Password.
 
-**Steps I Followed:**
-
-**1. Install Nodemailer:**
-      npm install nodemailer
-**2. Enable 2-Step Verification in Gmail**
-     Then generate an App Password from:
-     https://myaccount.google.com/apppasswords
-**3. Create a file sendEmail.js with the following code:**
+## 3. Create a file sendEmail.js with the following code:
+```js
     const nodemailer = require("nodemailer");
     const userEmail = "your_email@gmail.com"; // replace with your email const appPassword = "your_generated_app_password"; // NOT your Gmail passwordconst transporter = nodemailer.createTransport({
       service: "gmail",
@@ -48,15 +55,15 @@ This approach is helpful for sending automated reports, test results, or alerts 
       }
       console.log("Email sent:", info.response);
     }); 
+```
 
-**4. Run your script:**
+### 4. Run your script:
     node sendEmail.js
 
-
-**Result**:
+## Result:
 Email delivered successfully to my Gmail inbox.
 
-**Pros:**
+## Pros:
 1. Free & Easy to set up
 2. No need for Google Cloud billing or OAuth setup
 3. Useful for automated test notifications & CI/CD alerts
@@ -64,33 +71,12 @@ Email delivered successfully to my Gmail inbox.
 5. Works well for small-scale email use-cases
 
 
-**Cons:**
+## Cons:
 1. Cannot read inbox emails (Send only)
 2. Gmail SMTP has sending limits (~500 emails/day)
 3. Needs manual setup of App Passwords (only works with 2FA enabled)
 4. Not suitable for high-volume or transactional systems
 5. Less flexibility than Gmail API (e.g., no label, thread, or read access)
-
-
-![Uploading image.png…]()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 ![image](https://github.com/user-attachments/assets/c246bb86-dfa2-4529-8b61-ed9cf79610bd)
