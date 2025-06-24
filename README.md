@@ -3,17 +3,17 @@ This project demonstrates how to send automated emails using Node.js + Nodemaile
 
 **Today I explored how to send emails through automation using Node.js, Gmail SMTP & Nodemailer!**
 As part of a self-learning experiment, I created a script that:
-📬 Logs into my Gmail account using an App Password
-📧 Sends an email to myself
-✅ Verifies the email content
-📦 Uses Nodemailer with Gmail’s SMTP server
+1. Logs into my Gmail account using an App Password
+2. Sends an email to myself
+3. Verifies the email content
+4. Uses Nodemailer with Gmail’s SMTP server
 
 
 **Tech Used:**
-Node.js
-Nodemailer
-Gmail SMTP
-App Passwords (with 2FA enabled)
+1. Node.js
+2. Nodemailer
+3. Gmail SMTP
+4. App Passwords (with 2FA enabled)
 
 
 **Key Takeaways:**
@@ -57,19 +57,19 @@ This approach is helpful for sending automated reports, test results, or alerts 
 Email delivered successfully to my Gmail inbox.
 
 **Pros:**
-Free & Easy to set up
-No need for Google Cloud billing or OAuth setup
-Useful for automated test notifications & CI/CD alerts
-Secure with Gmail App Passwords
-Works well for small-scale email use-cases
+1. Free & Easy to set up
+2. No need for Google Cloud billing or OAuth setup
+3. Useful for automated test notifications & CI/CD alerts
+4. Secure with Gmail App Passwords
+5. Works well for small-scale email use-cases
 
 
 **Cons:**
-Cannot read inbox emails (Send only)
-Gmail SMTP has sending limits (~500 emails/day)
-Needs manual setup of App Passwords (only works with 2FA enabled)
-Not suitable for high-volume or transactional systems
-Less flexibility than Gmail API (e.g., no label, thread, or read access)
+1. Cannot read inbox emails (Send only)
+2. Gmail SMTP has sending limits (~500 emails/day)
+3. Needs manual setup of App Passwords (only works with 2FA enabled)
+4. Not suitable for high-volume or transactional systems
+5. Less flexibility than Gmail API (e.g., no label, thread, or read access)
 
 
 ![Uploading image.png…]()
